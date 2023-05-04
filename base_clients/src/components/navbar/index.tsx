@@ -17,7 +17,9 @@ export const Navbar = ({ userAuthenticated }: INavbar) => {
     return (
         <StyledNavbar>
             <nav>
-                <img src={logo} alt="Logo da Motors Shop"  onClick={()=> navigate('')}/>
+                <div className="base-clients-logo" onClick={()=> navigate('')}>
+                    <p>Base Clients</p>
+                </div>
                 <button className="menu-burger" onClick={() => setShowNavbarMobile(!showNavbarMobile)}>
                     {showNavbarMobile ? (
                         <GrClose size={20} />

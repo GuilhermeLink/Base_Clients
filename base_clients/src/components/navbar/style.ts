@@ -14,6 +14,11 @@ export const StyledNavbar = styled.header`
     align-items: center;
     background-color: #fff;
   }
+  .base-clients-logo{
+    font-size: 1.5rem;
+    font: bold;
+    cursor: pointer;
+  }
   .menu-burger {
     display: flex;
     justify-content: center;

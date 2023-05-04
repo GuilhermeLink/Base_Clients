@@ -4,10 +4,12 @@ import { StyledHeaderLogin } from './style'
 export default function Header() {
   return (
     <StyledHeaderLogin>
-        <img className='logo_header' src="https://cdn.discordapp.com/attachments/733520580355293286/1098635263250538719/Motors_shop.png" alt="" />
+        <div className='logo_header'>
+          <h1>Base Clients</h1>
+        </div>
         <img className='burguer_icon' src="https://cdn-icons-png.flaticon.com/512/6499/6499731.png" alt="" />
         <div className='login_desktop'>
-          <p>Fazer Login</p>
+          <p>Login</p>
           <button>Cadastrar</button>
         </div>
     </StyledHeaderLogin>
