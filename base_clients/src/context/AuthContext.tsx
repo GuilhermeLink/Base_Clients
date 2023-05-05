@@ -12,11 +12,7 @@ export interface IUser {
     id:          string;
     name:        string;
     email:       string;
-    cpf:         string;
     phone:       string;
-    birthDate:   string;
-    description: string;
-    type:        string;
     admin:       boolean;
 }
 
@@ -28,8 +24,8 @@ export const AuthContextProvider = ({children}: IAuthContextProviderProps) =>{
     const [currentUser, setCurrentUser] = useState<IUser>()
     const [loading, setLoading] = useState<boolean>(true)
     const verifyAuthUser = () =>{
-        const currentToken = localStorage.getItem('kenzie-brand-cars:token')
-        const currentUser = localStorage.getItem('kenzie-brand-cars:current-user')
+        const currentToken = localStorage.getItem('base-client:token')
+        const currentUser = localStorage.getItem('base-client:current-user')
         if(currentToken && currentUser){
             setUserAuthenticated(true)
             setCurrentUser(JSON.parse(currentUser))

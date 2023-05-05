@@ -26,8 +26,8 @@ export const useRequests = () => {
         try {
             const response = await api.post('/login', payload)
             console.log(response)
-            localStorage.setItem('kenzie-brand-cars:token', response.data.token.token)
-            localStorage.setItem('kenzie-brand-cars:current-user', JSON.stringify(response.data.token.user))
+            localStorage.setItem('base-clients:token', response.data.token.token)
+            localStorage.setItem('base-clients:current-user', JSON.stringify(response.data.token.user))
             return response
         } catch (error) {
             if(error instanceof AxiosError){

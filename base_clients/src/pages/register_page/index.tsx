@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form"
 import { Container } from "../../components/container"
-import { Navbar } from "../../components/navbar"
 import { useRequests } from "../../hooks/RequestsHooks"
 import { StyledRegisterPage } from "./style"
 import { FormDataRegisterUser, schema } from "../../schemas/register_user_schema"
@@ -31,11 +30,11 @@ export const RegisterPage = () => {
                     </label>
                     <label>
                         <p>Email:</p>
-                        <input type="text" placeholder="Ex: samuel@kenzie.com" {...register('email')} />
+                        <input type="text" placeholder="Ex: samuel@mail.com" {...register('email')} />
                     </label>
                     <label>
                         <p>Telefone:</p>
-                        <input type="text" placeholder="Ex: (DDD) 90000-0000" {...register('phone')}/>
+                        <input type="text" placeholder="Ex: (DDD)90000-0000" {...register('phone')}/>
                     </label>
                     <label>
                         <p>Senha:</p>

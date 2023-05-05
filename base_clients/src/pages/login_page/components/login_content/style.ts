@@ -20,6 +20,7 @@ h1 {
 
 label {
     margin-top: 32px;
+    margin-bottom: 10px;
 }
 
 a {
@@ -45,6 +46,11 @@ input {
     padding-inline: 5px;
 }
 
+input:hover {
+    border: 1px solid #4529E6;
+    padding-inline: 5px;
+}
+
 label,
 input,
 a {
@@ -54,9 +60,14 @@ a {
 }
 
 .submit_button {
-    background-color: #4529E6;
+    margin-top: 20px;
+    background-color: #2A417A;
     color: white;
     border: none;
+}
+
+.submit_button:hover {
+    background-color: #4529E6;
 }
 
 .register_button {
@@ -64,13 +75,18 @@ a {
     border: 1px solid rgba(0,0,0,0.2);
 }
 
+.register_button:hover {
+    border: 1px solid #4529E6;
+    color: #4529E6;
+}
+
 @media (min-width: 1024px) {
     width: 500px;
-    margin-top: 100px;
+    margin-top: 70px;
+    margin-bottom: 90px;
 
     button,
-    a,
-    .account_message {
+    a {
         cursor: pointer;
     }
 }

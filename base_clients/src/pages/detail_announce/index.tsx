@@ -1,34 +1,11 @@
-import { Container } from "../../components/container"
-import { StyledDetailAnnouncementPage } from "./style"
-
-export interface ICarAnnouncementDetail {
-    year: number;
-    km: number;
-    price_fipe: number;
-    price: number;
-    description: string;
-    image: string;
-    mark: string;
-    model: string;
-    fuel: string;
-    color: string;
-    gallery: Gallery;
-}
-
-export interface Gallery {
-    images: string[];
-}
+import React from 'react'
+import { Container } from '../../components/container'
 
 
+export default function Detail() {
 
-export const DetailAnnouncementPage = () => {
-    return (
-        <StyledDetailAnnouncementPage>
-            {/* <Navbar /> */}
-            <Container>
-                <h2>Anuncio detail page                </h2>
-            </Container>
-        </StyledDetailAnnouncementPage>
-
-    )
+  return (
+    <Container>
+    </Container>
+  )
 }

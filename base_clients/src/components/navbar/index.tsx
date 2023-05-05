@@ -1,6 +1,4 @@
 import { StyledNavbar } from "./style"
-import logo from '../../assets/motos-shop-logo.png'
-import barsIcon from '../../assets/bars.png'
 import { useContext, useState } from "react"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
@@ -40,11 +38,8 @@ export const Navbar = ({ userAuthenticated }: INavbar) => {
                 )}
             </nav>
             <ul className={showNavbarMobile ? "show" : "hidden"}>
-                <li>Carros</li>
-                <li>Motos</li>
-                <li>Leilão</li>
                 <hr />
-                <li onClick={()=> navigate('')}>Fazer Login</li>
+                <li><button className="mobile-login" onClick={()=> navigate('')}>Fazer Login</button></li>
                 <li><button onClick={()=> navigate('/register')}>Cadastrar</button></li>
             </ul>
         </StyledNavbar>

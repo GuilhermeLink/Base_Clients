@@ -1,5 +1,4 @@
 import { CircleInitials } from "../../../../components/circle_initials"
-import carImage from '../../../../assets/car-image.png'
 import { StyledCardAnnounce } from "./style"
 
 
@@ -10,7 +9,7 @@ export const CardAnnounce = () => {
 
             <div className="card-announce">
                 <div className="car-image-container">
-                    <img src={carImage} alt="" />
+                    <p>Imagem</p>
                 </div>
                 <div className="car-info">
                     <p>Maserati - Ghibli</p>

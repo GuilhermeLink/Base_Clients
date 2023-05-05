@@ -14,9 +14,11 @@ export const StyledRegisterPage = styled.div`
   h2 {
     margin-bottom: 1rem;
   }
+
   p {
     margin-bottom: 1rem;
   }
+
   form {
     display: flex;
     flex-direction: column;
@@ -35,12 +37,17 @@ export const StyledRegisterPage = styled.div`
           outline: none;
         }
       }
+      input:hover {
+        border: 1px solid #4529e6;        
+      }
     }
   }
+
   .double-input {
     display: flex;
     gap: 1rem;
   }
+
   .container-btn-account {
     display: flex;
     width: 100%;
@@ -58,15 +65,21 @@ export const StyledRegisterPage = styled.div`
       color: #fff;
     }
   }
+
   .btn-submit {
     cursor: pointer;
     border: none;
     border-radius: 4px;
     padding: 1rem;
-    background-color: #4529e6;
+    background-color: #2A417A;
 
     color: #fff;
   }
+
+  .btn-submit:hover {
+    background-color: #4529e6;
+  }
+
   .inputs-radio-styled{
     cursor: pointer;
     display: flex;
@@ -82,10 +95,12 @@ export const StyledRegisterPage = styled.div`
     background-color: #fff;
     color: #000;
   }
+
   .inputs-radio-styled:checked{
     background-color: #4529e6;
     color: #fff;
   }
+
   .buyer::before{
       content: 'Comprador';
 
