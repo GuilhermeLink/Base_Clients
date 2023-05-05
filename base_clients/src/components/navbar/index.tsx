@@ -32,7 +32,7 @@ export const Navbar = ({ userAuthenticated }: INavbar) => {
                     </div>
                 ) : (
                     <div className="profile-info">
-                        <button className="btn btn-login" onClick={()=> navigate('')}>Fazer Login</button>
+                        <button className="btn btn-login">Fazer Login</button>
                         <button className="btn btn-register" onClick={()=> navigate('/register')}>Cadastrar</button>
                     </div>
                 )}

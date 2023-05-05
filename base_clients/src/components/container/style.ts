@@ -16,6 +16,7 @@ background-color: #F1F3F5;
     display: flex;
     justify-content: center;
 }
+
 .content{
     width: 100%;
     height: calc(100% - 5rem);

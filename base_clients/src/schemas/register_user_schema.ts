@@ -6,37 +6,21 @@ export const schema = yup.object({
     .string()
     .required("O campo é obrigatório")
     .email("O email deve ser um email válido"),
-  cpf: yup
-    .string()
-    .required(),
-    // .matches(
-    //   /[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}/gm,
-    //   "O padrão de CPF é inválido."
-    // ),
   phone: yup
     .string()
     .required("O campo é obrigatório"),
-    // .matches(
-    //   /\([[0-9]{2}\)\s9[0-9]{4}\-[0-9]{4}/gm,
-    //   "O padrão de celular não aceito."
-    // ),
-  type: yup.string().required("O campo é obrigatório"),
-  address: yup.object({
-    zipCode: yup
+  password: yup
     .string()
-    .required("O campo é obrigatório"),
-    // .matches(/[0-9]{5}\-[0-9]{3}/gm, "O CEP é inválido."),
-    state: yup.string().required("O campo é obrigatório"),
-    street: yup.string().required("O campo é obrigatório"),
-    city: yup.string().required("O campo é obrigatório"),
-    number: yup.number().required(),
-    neighborhood:yup.string().required("O campo é obrigatório"),
-    complement: yup.string().required("O campo é obrigatório")
-  }),
-  birthDate: yup.string().required("O campo é obrigatório"),
-  description: yup.string().required("O campo é obrigatório"),
-  password: yup.string().required("O campo é obrigatório"),
-  confirmPassword: yup.string().required("O campo é obrigatório").oneOf([yup.ref('password')], 'As senhas devem ser iguais'),
+    .required("Senha obrigatória")
+    .min(8, "A senha deve ter no mínimo 8 caracteres")
+    .matches(/[a-z]/, "Deve conter ao menos uma letra minúscula")
+    .matches(/[A-Z]/, "Deve conter ao menos uma letra maiúscula")
+    .matches(/\d/, "Deve conter ao menos um número")
+    .matches(/\W|_/, "Deve conter ao menos um caracter especial"),
+  confirmPassword: yup
+    .string()
+    .required("O campo é obrigatório")
+    .oneOf([yup.ref('password')], 'As senhas devem ser iguais'),
 });
 
 export type FormDataRegisterUser = yup.InferType<typeof schema>

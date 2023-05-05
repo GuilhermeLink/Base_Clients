@@ -4,10 +4,6 @@ import { api } from "../service/http"
 import { FormDataLoginUser } from "../schemas/login_user_schema"
 
 
-interface IUserRegisterRequest{
-
-}
-
 export const useRequests = () => {
     const registerUserRequest = async (payload: FormDataRegisterUser) => {
         try {

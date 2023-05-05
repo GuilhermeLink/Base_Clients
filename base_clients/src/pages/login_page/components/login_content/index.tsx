@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyledLoginContent } from './style'
 import { useNavigate } from 'react-router-dom'
-
-
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
 import { useRequests } from '../../../../hooks/RequestsHooks'
 import { FormDataLoginUser, schema } from '../../../../schemas/login_user_schema'
+
+
 export default function LoginContent() {
   const { loginUserRequest } = useRequests()
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormDataLoginUser>({
@@ -21,8 +21,8 @@ export default function LoginContent() {
     <StyledLoginContent>
       <h1>Login</h1>
       <form onSubmit={handleSubmit(handleLogin)}>
-        <label>Usuário:</label>
-        <input type="text" id="username" placeholder="Digite seu usuário" {...register('email')}/>
+        <label>Email:</label>
+        <input type="text" id="username" placeholder="Digite seu email de usuário" {...register('email')}/>
 
         <label>Senha:</label>
         <input type="password" id="password" placeholder="Digite sua senha" {...register('password')}/>

@@ -83,7 +83,7 @@ a {
 @media (min-width: 1024px) {
     width: 500px;
     margin-top: 70px;
-    margin-bottom: 90px;
+    margin-bottom: 10px;
 
     button,
     a {
