@@ -25,22 +25,22 @@ class User {
     phone: string
 
     @Column({ default: false })
-    isAdm: boolean
+    isAdm?: boolean
 
     @Column({ default: true })
-    isActive: boolean
+    isActive?: boolean
 
     @CreateDateColumn()
-    createdAt: Date
+    createdAt?: Date
 
     @UpdateDateColumn()
-    updatedAt: Date
+    updatedAt?: Date
 
     @DeleteDateColumn()
-    deletedAt: Date
+    deletedAt?: Date
 
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    id?: string
 
 }
 

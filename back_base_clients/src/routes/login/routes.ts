@@ -6,7 +6,7 @@ import { createLoginController } from "../../controllers/user/login";
 export const loginRoutes = Router();
 
 loginRoutes.post(
-  "",
+  "/login",
   validateSchemaMiddleware(schemaLogin),
   createLoginController
 );

@@ -2,8 +2,8 @@ export interface IUserRequest {
   name: string
   email: string
   password: string
-  isAdm: boolean
   phone: string
+  isAdm?: boolean
 }
 
 export interface IUser {
