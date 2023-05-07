@@ -12,7 +12,12 @@ export interface IUser {
     id:          string;
     name:        string;
     email:       string;
+    cpf:         string;
     phone:       string;
+    birthDate:   string;
+    description: string;
+    type:        string;
+    admin:       boolean;
 }
 
 export const AuthContext = createContext({} as IAuthContextProps)
@@ -23,8 +28,8 @@ export const AuthContextProvider = ({children}: IAuthContextProviderProps) =>{
     const [currentUser, setCurrentUser] = useState<IUser>()
     const [loading, setLoading] = useState<boolean>(true)
     const verifyAuthUser = () =>{
-        const currentToken = localStorage.getItem('base-clients:token')
-        const currentUser = localStorage.getItem('base-clients:current-user')
+        const currentToken = localStorage.getItem('kenzie-brand-cars:token')
+        const currentUser = localStorage.getItem('kenzie-brand-cars:current-user')
         if(currentToken && currentUser){
             setUserAuthenticated(true)
             setCurrentUser(JSON.parse(currentUser))

@@ -1,4 +1,5 @@
 import { StyledNavbar } from "./style"
+import logo from '../../assets/motos-shop-logo.png'
 import { useContext, useState } from "react"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
@@ -15,9 +16,7 @@ export const Navbar = ({ userAuthenticated }: INavbar) => {
     return (
         <StyledNavbar>
             <nav>
-                <div className="base-clients-logo" onClick={()=> navigate('')}>
-                    <p>Base Clients</p>
-                </div>
+                <img src={logo} alt="Logo da Motors Shop"  onClick={()=> navigate('')}/>
                 <button className="menu-burger" onClick={() => setShowNavbarMobile(!showNavbarMobile)}>
                     {showNavbarMobile ? (
                         <GrClose size={20} />
@@ -32,14 +31,17 @@ export const Navbar = ({ userAuthenticated }: INavbar) => {
                     </div>
                 ) : (
                     <div className="profile-info">
-                        <button className="btn btn-login">Fazer Login</button>
+                        <button className="btn btn-login" onClick={()=> navigate('')}>Fazer Login</button>
                         <button className="btn btn-register" onClick={()=> navigate('/register')}>Cadastrar</button>
                     </div>
                 )}
             </nav>
             <ul className={showNavbarMobile ? "show" : "hidden"}>
+                <li>Carros</li>
+                <li>Motos</li>
+                <li>Leilão</li>
                 <hr />
-                <li><button className="mobile-login" onClick={()=> navigate('')}>Fazer Login</button></li>
+                <li onClick={()=> navigate('')}>Fazer Login</li>
                 <li><button onClick={()=> navigate('/register')}>Cadastrar</button></li>
             </ul>
         </StyledNavbar>

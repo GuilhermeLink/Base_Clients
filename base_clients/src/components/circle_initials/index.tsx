@@ -1,6 +1,5 @@
 import { StyledCircleInitials } from "./style"
 
-
 interface ICircleInitials{
     first: string
     second: string

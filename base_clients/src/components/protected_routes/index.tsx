@@ -6,7 +6,7 @@ import { Container } from "../container"
 
 
 export const ProtectedRoutes = () => {
-    const { currentUser, loading, userAuthenticated } = useContext(AuthContext)
+    const { loading, userAuthenticated } = useContext(AuthContext)
     const location = useLocation()
     if (loading) {
         return (

@@ -9,7 +9,7 @@ interface IContainerProps{
 export const Container= ({children}: IContainerProps) => {
     return(
     <StyledContainer>
-        <div className="content" >
+        <div className="content">
         {children}
         <Footer/>
         </div>
