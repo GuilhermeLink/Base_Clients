@@ -10,10 +10,10 @@ const RoutesMain = () => {
   return (
     <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        <Route path='/user' element={<Register />} />
         <Route path='*' element={<Navigate to='/login' />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path='/home' element={<Home />} />
+          <Route path='/clientes' element={<Home />} />
         </Route>
     </Routes>
   )

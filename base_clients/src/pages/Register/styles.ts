@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 
+export const BackPage = styled.div`
+    width: 100%;
+    height: 100%;
+
+    .backlogo {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.5;
+    }
+`
+
 export const RegisterPage = styled.div`
     width: 370px;
-    height: 1001px;
+    height: 801px;
     background-color: var(--color-Grey-3);
     margin: 0 auto;
     box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
@@ -142,5 +155,9 @@ export const RegisterHeader = styled.header`
 
     header > a:hover {
         background-color: var(--color-Grey-1);
+    }
+
+    .logo {
+        color: var(--color-primary); 
     }
 `

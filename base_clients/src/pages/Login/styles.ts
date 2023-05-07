@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const BackPage = styled.div`
+    width: 100%;
+    height: 100%;
+
+    .backlogo {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.5;
+    }
+`
+
 export const LoginPage = styled.div`
     width: 369px;
     height: 522px;
@@ -156,6 +169,10 @@ export const LoginHeader = styled.header`
     h1 {
         width: 60%;
         margin: 0 auto;
+    }
+
+    .logo {
+        color: var(--color-primary); 
     }
 
     @media (max-width: 365px) {

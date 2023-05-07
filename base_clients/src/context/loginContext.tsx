@@ -15,16 +15,10 @@ interface iLoginFormData {
   password: string;
 }
 
-interface iTech {
-  id: number;
-  title: string;
-}
-
 interface iUser {
   id: number;
   name: string;
   email: string;
-  techs: iTech[];
 }
 
 interface iLoginProviderProps {
@@ -41,8 +35,6 @@ interface iAuthContext {
   setAlert: (alert: any) => void;
   setLoading: (loading: boolean) => void;
   globalSetLoading: boolean;
-  tech: iTech[];
-  setTech: (tech: iTech[]) => void;
 }
 
 export const AuthContext = createContext<iAuthContext>({
@@ -53,9 +45,7 @@ export const AuthContext = createContext<iAuthContext>({
   alert: null,
   setAlert: () => {},
   setLoading: () => {},
-  globalSetLoading: true,
-  tech: [],
-  setTech: () => {},
+  globalSetLoading: true
 });
 
 
@@ -66,22 +56,20 @@ export const LoginProvider= ({ children }: iLoginProviderProps) => {
   const navigate = useNavigate();
   const [alert, setAlert] = useState<any>(null);
   const [globalSetLoading, setGlobalSetLoading] = useState<boolean>(true);
-  const [tech, setTech] = useState<iTech[]>([]);
   const { merge } = axios;
 
   const loginUser = async (data: iLoginFormData): Promise<void> => {
     try {
       setLoading(true);
-      const response = await api.post('/sessions', data);
+      const response = await api.post('/clientes', data);
       localStorage.setItem('@usertoken', response.data.token);
       toast.success('Login realizado com sucesso', {
         position: 'top-right',
         autoClose: 2000,
       });
       setUser(response.data.user);
-      setTech(response.data.user.techs);
 
-      navigate('/home');
+      navigate('/clientes');
     } catch (error) {
       setAlert({
         type: 'error',
@@ -104,7 +92,7 @@ export const LoginProvider= ({ children }: iLoginProviderProps) => {
             };
             api.defaults.headers = merge(api.defaults.headers, headers);
 
-          const response = await api.get('/profile');
+          const response = await api.get('/user');
 
           setUser(response.data);
         } catch (error) {
@@ -128,9 +116,7 @@ export const LoginProvider= ({ children }: iLoginProviderProps) => {
         alert,
         setAlert,
         setLoading,
-        globalSetLoading,
-        tech,
-        setTech,
+        globalSetLoading
       }}
     >
       {children}

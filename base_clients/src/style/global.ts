@@ -24,16 +24,16 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-    font-family: 'Inter', sans-serif;
-    width: 100vw;
-    height: 90vh;
-    background-color: #121214;
+        font-family: 'Inter', sans-serif;
+        width: 100vw;
+        height: 90vh;
+        background-color: #121214;
     }
 
     :root{
-        --color-primary: #FF577F;
-        --color-primary-Focus: #FF427F;
-        --color-primary-Negative: #59323F;
+        --color-primary: #3FE864;
+        --color-primary-Focus: #3FE500;
+        --color-primary-Negative: #154528;
         --color-Grey-4: #121214;
         --color-Grey-3: #212529;
         --color-Grey-2: #343B41;

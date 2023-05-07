@@ -1,5 +1,4 @@
-import {LoginPage, LoginHeader} from './styles'
-import imgLogo from '../../assets/Logo.png'
+import {LoginPage, LoginHeader, BackPage} from './styles'
 import { FaEye } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form";
@@ -8,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useContext } from 'react'
 import { AuthContext } from '../../context/loginContext'
+import background from '../../assets/background.png'
 
 
 const schema = yup.object({
@@ -47,9 +47,12 @@ const Login = () => {
 
     return (
         <div>
+            <BackPage>
+                <img className='backlogo' src={background} alt="back" />
+            </BackPage>    
             <LoginHeader>
-                <h1>
-                    <img src={imgLogo} alt='logo' />
+                <h1 className='logo'>
+                <span>Base Clients</span>
                 </h1>
             </LoginHeader>
             <LoginPage>
@@ -74,7 +77,7 @@ const Login = () => {
                             <span>{errors.password?.message}</span>
                         <button type='submit' disabled={loading}>{loading ? 'Entrando...' : 'Entrar'}</button>
                         <p>Ainda não possui uma conta?</p>
-                        <Link to='/register'>Cadastre-se</Link>
+                        <Link to='/user'>Cadastre-se</Link>
                     </section>
                 </form>
             </LoginPage>
