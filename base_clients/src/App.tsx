@@ -1,27 +1,21 @@
-import React, { useContext } from 'react';
-import Login from './pages/login_page';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { RegisterPage } from './pages/register_page';
-import { Navbar } from './components/navbar';
-import { AuthContext } from './context/AuthContext';
-import { ProfileViewUserPage } from './pages/profile_view_user_page';
-import { ProtectedRoutes } from './components/protected_routes';
-
+import Routes from './routes';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
+import {LoginProvider} from './context/loginContext';
+import RegisterProvider from './context/registerContext';
 
 function App() {
-  const { userAuthenticated } = useContext(AuthContext)
+
   return (
-    <BrowserRouter>
-      <Navbar userAuthenticated={userAuthenticated} />
-      <Routes>
-        <Route path='/' element={ userAuthenticated? <Navigate to='/home' />:<Login />} />
-        <Route path='/register' element={ userAuthenticated? <Navigate to='/' />:<RegisterPage />} />
-        <Route element={<ProtectedRoutes />}>
-          <Route path='/profile/:id' element={<ProfileViewUserPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  )
+  <>
+    <ToastContainer autoClose={2000} />
+    <RegisterProvider>         
+      <LoginProvider>    
+          <Routes />       
+      </LoginProvider>
+    </RegisterProvider>
+  </>
+  );
 }
 
 export default App;
