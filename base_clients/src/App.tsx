@@ -1,19 +1,20 @@
-import { UserProvider } from "./contexts/userContext/userContext";
-import { RoutesMain } from "./routes";
+import Routes from './routes';
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { SearchProvider } from "./contexts/searchContext/searchContext";
+import "react-toastify/dist/ReactToastify.css"; 
+import {LoginProvider} from './context/loginContext';
+import RegisterProvider from './context/registerContext';
 
 function App() {
+
   return (
-    <>
-      <UserProvider>
-        <SearchProvider>
-          <ToastContainer autoClose={2000} />
-          <RoutesMain />
-        </SearchProvider>
-      </UserProvider>
-    </>
+  <>
+    <ToastContainer autoClose={2000} />
+    <RegisterProvider>         
+      <LoginProvider>    
+          <Routes />       
+      </LoginProvider>
+    </RegisterProvider>
+  </>
   );
 }
 

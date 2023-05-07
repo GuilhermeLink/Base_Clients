@@ -1,23 +1,22 @@
-import { Route, Routes, Navigate } from "react-router-dom";
-import DashboardLibrary from "../components/DashboardLibrary";
-import { DashboardPage } from "../pages/DashBoardPage";
-import { LandingPage } from "../pages/LandingPage";
-import ProtectedRoutes from "../components/ProtectedRouter";
-import DashboardMain from "../components/DashboardMain";
-import {ClientListPage} from "../pages/ClientListPage";
+import React from 'react'
+import {Route, Routes, Navigate} from 'react-router-dom'
+import ProtectedRoutes from '../components/ProtectedRoutes'
+import Home from '../pages/Home'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
 
-export const RoutesMain = () => (
-  <>
-  <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/" element={<ProtectedRoutes />}>
-        <Route path="/dashboard" element={<DashboardPage />}>
-          <Route index element={<DashboardMain/>} />
-          <Route path="clientes" element={<ClientListPage />} />
-          <Route path="biblioteca" element={<DashboardLibrary />} />
+const RoutesMain = () => {
+
+  return (
+    <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route path='/user' element={<Register />} />
+        <Route path='*' element={<Navigate to='/login' />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/clientes' element={<Home />} />
         </Route>
-      </Route>
     </Routes>
-  </>
-);
+  )
+}
 
+export default RoutesMain
