@@ -30,7 +30,7 @@ getContactByIdController
 );
 
 
-contactRoutes.put(
+contactRoutes.patch(
 "/clientes/:clientId/contatos/:contactId",
 validateSchemaMiddleware(schemaUpdateContact),
 updateContactController

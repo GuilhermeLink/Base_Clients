@@ -289,6 +289,18 @@ DELETE http://localhost:3000/clients/1
 ```
 ## ROTA DE CONTATOS
 ```
+
+GET /clientes     // Retorna todos os clientes
+GET /clientes/:id // Retorna um cliente específico
+POST /clientes    // Cria um novo cliente
+PUT /clientes/:id // Atualiza um cliente existente
+DELETE /clientes/:id // Deleta um cliente existente
+
+A rota de clientes irá interagir com o modelo Cliente, que será responsável por lidar com as operações no banco de dados relacionadas aos clientes.
+
+
+...
+=======
 A rota de contatos pode ser implementada usando os seguintes endpoints:
 
 GET /contatos: Retorna uma lista de todos os contatos cadastrados no sistema.
@@ -338,4 +350,5 @@ bash
 Copy code
 DELETE http://localhost:3000/contatos/1
 Lembre-se de que é necessário estar autenticado para acessar as rotas protegidas da API, utilizando o token de autenticação obtido na rota de login.
+
 ---

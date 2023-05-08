@@ -90,6 +90,10 @@ export const LoginPage = styled.div`
         color: var(--color-Grey-1);
     }
 
+    form > section > div > input {
+        width: 100%;
+    }
+
     form > section > div > svg > path {
         cursor: pointer;
     }
@@ -169,6 +173,10 @@ export const LoginHeader = styled.header`
     h1 {
         width: 60%;
         margin: 0 auto;
+    }
+
+    span {
+        font-size: 48px;
     }
 
     .logo {
