@@ -4,6 +4,9 @@
 
 O projeto está dividido em uma pasta de backend(back_base_clients) e uma de frontend(base_clients).
 
+* Na pasta do projeto, instale as dependências necessárias utilizando o comando:
+npm install.
+
 * Para acessar o conteudo do frontend utilizar comando:
 yarn start.
 
@@ -230,8 +233,63 @@ status - 400
 > **Homepage**
 
 ## ROTA CLIENTES
+```
+A rota de clientes pode ser implementada usando os seguintes endpoints:
+
+GET /clientes     // Retorna todos os clientes
+GET /clientes/:id // Retorna um cliente específico
+POST /clientes    // Cria um novo cliente
+PUT /clientes/:id // Atualiza um cliente existente
+DELETE /clientes/:id // Deleta um cliente existente
+
+Criar um novo cliente:
+bash
+Copy code
+POST http://localhost:3000/clients
+
+Request body:
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "phone": "555-1234"
+}
+Listar todos os clientes:
+bash
+Copy code
+GET http://localhost:3000/clients
+Obter um cliente específico:
+bash
+Copy code
+GET http://localhost:3000/clients/:id
+
+Exemplo:
+GET http://localhost:3000/clients/1
+Atualizar um cliente:
+bash
+Copy code
+PUT http://localhost:3000/clients/:id
+
+Request body:
+{
+  "name": "Jane Doe",
+  "email": "janedoe@example.com",
+  "phone": "555-5678"
+}
+
+Exemplo:
+PUT http://localhost:3000/clients/1
+Excluir um cliente:
+bash
+Copy code
+DELETE http://localhost:3000/clients/:id
+
+Exemplo:
+DELETE http://localhost:3000/clients/1
 
 ```
+## ROTA DE CONTATOS
+```
+
 GET /clientes     // Retorna todos os clientes
 GET /clientes/:id // Retorna um cliente específico
 POST /clientes    // Cria um novo cliente
@@ -242,4 +300,55 @@ A rota de clientes irá interagir com o modelo Cliente, que será responsável p
 
 
 ...
+=======
+A rota de contatos pode ser implementada usando os seguintes endpoints:
+
+GET /contatos: Retorna uma lista de todos os contatos cadastrados no sistema.
+Exemplo de requisição:
+
+bash
+Copy code
+GET http://localhost:3000/contatos
+GET /contatos/:id: Retorna as informações de um contato específico, identificado pelo seu ID.
+Exemplo de requisição:
+
+bash
+Copy code
+GET http://localhost:3000/contatos/1
+POST /contatos: Cadastra um novo contato no sistema. Deve receber os seguintes parâmetros no corpo da requisição: nome, email, telefone e empresa.
+Exemplo de requisição:
+
+bash
+Copy code
+POST http://localhost:3000/contatos
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao.silva@example.com",
+  "telefone": "(11) 99999-9999",
+  "empresa": "Acme Inc."
+}
+PATCH /contatos/:id: Atualiza as informações de um contato específico, identificado pelo seu ID. Deve receber os seguintes parâmetros no corpo da requisição: nome, email, telefone e empresa.
+Exemplo de requisição:
+
+bash
+Copy code
+PUT http://localhost:3000/contatos/1
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "email": "joao.silva@example.com",
+  "telefone": "(11) 88888-8888",
+  "empresa": "Acme Ltda."
+}
+DELETE /contatos/:id: Exclui um contato específico, identificado pelo seu ID.
+Exemplo de requisição:
+
+bash
+Copy code
+DELETE http://localhost:3000/contatos/1
+Lembre-se de que é necessário estar autenticado para acessar as rotas protegidas da API, utilizando o token de autenticação obtido na rota de login.
+
 ---
