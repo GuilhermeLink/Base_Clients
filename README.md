@@ -243,6 +243,3 @@ A rota de clientes irá interagir com o modelo Cliente, que será responsável p
 
 ...
 ---
-
-
-
