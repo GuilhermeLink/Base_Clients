@@ -12,33 +12,33 @@ import { schemaCreateContact, schemaUpdateContact } from "../../schemas/contact"
 export const contactRoutes = Router();
 
 contactRoutes.post(
-"/clientes/:clientId/contatos",
+"/clients/:clientId/contatos",
 validateSchemaMiddleware(schemaCreateContact),
 createContactController
 );
   
   
 contactRoutes.get(
-"/clientes/:clientId/contatos",
+"/clients/:clientId/contatos",
 listContactsByClientIdController
 );
 
 
 contactRoutes.get(
-"/clientes/:clientId/contatos/:contactId",
+"/clients/:clientId/contatos/:contactId",
 getContactByIdController
 );
 
 
 contactRoutes.patch(
-"/clientes/:clientId/contatos/:contactId",
+"/clients/:clientId/contatos/:contactId",
 validateSchemaMiddleware(schemaUpdateContact),
 updateContactController
 );
 
 
 contactRoutes.delete(
-"/clientes/:clientId/contatos/:contactId",
+"/clients/:clientId/contatos/:contactId",
 deleteContactController
 );
   

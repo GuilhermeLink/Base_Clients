@@ -13,7 +13,7 @@ const RoutesMain = () => {
         <Route path='/user' element={<Register />} />
         <Route path='*' element={<Navigate to='/login' />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path='/clientes' element={<Home />} />
+          <Route path='/clients' element={<Home />} />
         </Route>
     </Routes>
   )
