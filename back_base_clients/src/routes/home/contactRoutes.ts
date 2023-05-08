@@ -1,38 +1,44 @@
 // Rota para criar um novo contato vinculado a um cliente
 import { Router } from "express";
 import { validateSchemaMiddleware } from "../../middlewares/validated";
+import { createContactController } from "../../controllers/contact/create";
+import { listContactsByClientIdController } from "../../controllers/contact/list";
+import { getContactByIdController } from "../../controllers/contact/listId";
+import { updateContactController } from "../../controllers/contact/update";
+import { deleteContactController } from "../../controllers/contact/delete";
+import { schemaCreateContact, schemaUpdateContact } from "../../schemas/contact";
 
 
 export const contactRoutes = Router();
 
 contactRoutes.post(
-    "/clientes/:clientId/contatos",
-    validateSchemaMiddleware(schemaCreateContact),
-    createContactController
-  );
+"/clientes/:clientId/contatos",
+validateSchemaMiddleware(schemaCreateContact),
+createContactController
+);
   
-  // Rota para listar todos os contatos de um cliente específico pelo ID
-  contactRoutes.get(
-    "/clientes/:clientId/contatos",
-    listContactsByClientIdController
-  );
   
-  // Rota para buscar um contato específico de um cliente pelo ID
-  contactRoutes.get(
-    "/clientes/:clientId/contatos/:contactId",
-    getContactByIdController
-  );
-  
-  // Rota para atualizar um contato de um cliente pelo ID
-  contactRoutes.put(
-    "/clientes/:clientId/contatos/:contactId",
-    validateSchemaMiddleware(schemaUpdateContact),
-    updateContactController
-  );
-  
-  // Rota para deletar um contato de um cliente pelo ID
-  contactRoutes.delete(
-    "/clientes/:clientId/contatos/:contactId",
-    deleteContactController
-  );
+contactRoutes.get(
+"/clientes/:clientId/contatos",
+listContactsByClientIdController
+);
+
+
+contactRoutes.get(
+"/clientes/:clientId/contatos/:contactId",
+getContactByIdController
+);
+
+
+contactRoutes.put(
+"/clientes/:clientId/contatos/:contactId",
+validateSchemaMiddleware(schemaUpdateContact),
+updateContactController
+);
+
+
+contactRoutes.delete(
+"/clientes/:clientId/contatos/:contactId",
+deleteContactController
+);
   
