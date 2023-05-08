@@ -30,7 +30,7 @@ clientRoutes.get(
 );
 
 // Rota para atualizar um cliente pelo ID
-clientRoutes.put(
+clientRoutes.patch(
   "/clientes/:id",
   validateSchemaMiddleware(schemaUpdateClient),
   updateClientController
