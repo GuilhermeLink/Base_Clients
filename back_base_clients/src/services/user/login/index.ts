@@ -22,7 +22,6 @@ export const createLoginService = async (data: IUserLogin): Promise<Object> => {
   const token = jwt.sign(
     {
       id: user.id,
-      admin: user.isAdm,
       user: new_user,
     },
     String(process.env.SECRET_KEY),
@@ -33,7 +32,6 @@ export const createLoginService = async (data: IUserLogin): Promise<Object> => {
   );
   return {
     token,
-    admin: user.isAdm,
     id: user.id,
     user: new_user,
   };

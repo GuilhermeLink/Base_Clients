@@ -16,7 +16,7 @@ interface iLoginFormData {
 }
 
 interface iUser {
-  id: number;
+  id: string;
   name: string;
   email: string;
 }
@@ -61,7 +61,7 @@ export const LoginProvider= ({ children }: iLoginProviderProps) => {
   const loginUser = async (data: iLoginFormData): Promise<void> => {
     try {
       setLoading(true);
-      const response = await api.post('/clientes', data);
+      const response = await api.post('/login', data);
       localStorage.setItem('@usertoken', response.data.token);
       toast.success('Login realizado com sucesso', {
         position: 'top-right',

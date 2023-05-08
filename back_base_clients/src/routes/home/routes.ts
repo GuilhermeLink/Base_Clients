@@ -1,5 +1,11 @@
 import { Router } from "express";
 import { validateSchemaMiddleware } from "../../middlewares/validated";
+import { createClientController } from "../../controllers/client/create";
+import { listClientsController } from "../../controllers/client/list";
+import { getClientByIdController } from "../../controllers/client/listId";
+import { updateClientController } from "../../controllers/client/update";
+import { deleteClientController } from "../../controllers/client/delete";
+import { schemaCreateClient, schemaUpdateClient } from "../../schemas/client";
 
 
 export const clientRoutes = Router();
