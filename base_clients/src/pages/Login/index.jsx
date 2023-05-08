@@ -60,16 +60,16 @@ const Login = () => {
                     <h2>Login</h2>
                     <section>
                         <label htmlFor='email'>Email</label>
-                        <input id='email' type='email' placeholder='Digite aqui seu email...' {...register('email')}/>
+                        <input type='email' placeholder='Digite aqui seu email...' {...register('email')}/>
                         <span>{errors.email?.message}</span>
 
                         <label htmlFor='password'>Senha</label>
                         <div>
                             {
                                 eye ?                   
-                                <input id='password' type='password' placeholder='Digite aqui sua senha...' {...register('password')}/>
+                                <input type='password' placeholder='Digite aqui sua senha...' {...register('password')}/>
                                 :
-                                <input id='password' type='text' placeholder='Digite aqui sua senha...' {...register('password')}/>
+                                <input type='text' placeholder='Digite aqui sua senha...' {...register('password')}/>
                                 
                             }
                             <FaEye onClick={changeStateEye}/>

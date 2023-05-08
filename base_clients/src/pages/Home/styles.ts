@@ -28,6 +28,10 @@ export const HomePage = styled.header`
     a:hover {
         background-color: var(--color-Grey-1);
     }
+
+    span {
+        color: var(--color-primary);
+    }
 `
 
 export const Main = styled.main`
@@ -193,9 +197,24 @@ export const Modal = styled.section`
         height: 362px;
         position: absolute;
         top: 30%;
-        left: 25%;
+        left: 35%;
         background-color: var(--color-Grey-3);
         border-radius: 4px;
+    }
+
+    .modalCard > header > button:hover {
+        color: #fff;
+    }
+
+    .modalCard > form > label > input {
+        width: 100%;
+        background-color: #fff;
+        margin-top: 5px;
+        padding: 5px;
+    }
+
+    .modalCard > form > label {
+        margin-bottom: 10px
     }
 
     @media(max-width: 426px) {

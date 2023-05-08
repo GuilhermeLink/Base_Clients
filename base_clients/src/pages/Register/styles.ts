@@ -133,6 +133,10 @@ export const RegisterHeader = styled.header`
         justify-content: space-between;
     }
 
+    span {
+        font-size: 48px;
+    }
+
     @media (max-width: 390px) {
         header {
             margin: 0 auto;
@@ -146,7 +150,7 @@ export const RegisterHeader = styled.header`
         text-decoration: none;
         font-weight: 600;
         font-size: 12px;
-        padding: 0 16px;
+        padding: 0 12px;
         border-radius: 4px;
         background-color: var(--color-Grey-3);
         color: var(--color-Grey-0);
